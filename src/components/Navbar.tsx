@@ -9,6 +9,12 @@ const navLinks = [
   { name: "AI工具", href: "#products", hasSubmenu: true },
   { name: "技巧", href: "#tips", hasSubmenu: true },
   { name: "关于", href: "/about" },
+  { name: "下载", href: "#download", hasSubmenu: true },
+];
+
+const downloadSubmenu = [
+  { name: "智能公众号助手", href: "https://www.dingzhenxing.cn/download", desc: "桌面客户端下载", external: true, target: "_blank", rel: "noopener noreferrer" },
+  { name: "智能偷懒助手", href: "https://www.dingzhenxing.cn/lazy-helper", desc: "发票OCR + 会议纪要 + 知识库 + AI任务管理", external: true, target: "_blank", rel: "noopener noreferrer" },
 ];
 
 const productSubmenu = [
@@ -18,6 +24,7 @@ const productSubmenu = [
   { name: "小红书生成", href: "/xiaohongshu", desc: "AI 创作小红书内容" },
   { name: "报告生成", href: "/report", desc: "AI 生成专业分析报告" },
   { name: "数字营销", href: "/marketing", desc: "一键探索全链路数字营销" },
+  { name: "智能公众号助手", href: "/wechat", desc: "AI 创作并发布公众号文章" },
 ];
 
 const tipsSubmenu = [
@@ -106,7 +113,7 @@ export function Navbar() {
                     }}
                   >
                     <div className="py-2">
-                      {(link.name === "AI工具" ? productSubmenu : tipsSubmenu).map((item) => (
+                      {(link.name === "AI工具" ? productSubmenu : link.name === "下载" ? downloadSubmenu : tipsSubmenu).map((item) => (
                         <a
                           key={item.name}
                           href={item.href}
@@ -195,7 +202,7 @@ export function Navbar() {
                     </button>
                     {mobileSubmenuOpen && (
                       <div className="pl-4 space-y-1 mt-1">
-                        {(link.name === "AI工具" ? productSubmenu : tipsSubmenu).map((item) => (
+                        {(link.name === "AI工具" ? productSubmenu : link.name === "下载" ? downloadSubmenu : tipsSubmenu).map((item) => (
                           <button
                             key={item.name}
                             onClick={() => {

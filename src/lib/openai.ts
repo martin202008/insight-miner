@@ -1,16 +1,9 @@
 import OpenAI from 'openai';
 
-let openAIClient: OpenAI | null = null;
 let miniMaxClient: OpenAI | null = null;
 
 export function getOpenAIClient(): OpenAI {
-  if (!openAIClient) {
-    if (!process.env.OPENAI_API_KEY) {
-      throw new Error('FATAL: OPENAI_API_KEY environment variable is not set');
-    }
-    openAIClient = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-  }
-  return openAIClient;
+  return getMiniMaxClient();
 }
 
 export function getMiniMaxClient(): OpenAI {
@@ -20,7 +13,7 @@ export function getMiniMaxClient(): OpenAI {
     }
     miniMaxClient = new OpenAI({
       apiKey: process.env.MINIMAX_API_KEY,
-      baseURL: 'https://api.minimaxi.com/v1',
+      baseURL: 'https://token-plan-cn.xiaomimimo.com/v1',
     });
   }
   return miniMaxClient;

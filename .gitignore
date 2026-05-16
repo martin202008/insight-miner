@@ -40,3 +40,21 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .worktrees/
+
+# data
+.data/
+
+# nginx configs (contains SSL keys)
+dingzhenxing.cn_nginx/
+
+# docs
+docs/
+
+# hermes agent files
+AGENTS.md
+CLAUDE.md
+
+# build outputs
+/release/
+/dist/
+uploads/

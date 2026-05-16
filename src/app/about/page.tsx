@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowLeft, Sparkles, Zap, Brain, Rocket, Coffee, FileText, Mic, Video, FileSearch, BookOpen, Shield, Scale } from 'lucide-react';
+import { ArrowLeft, Sparkles, Zap, Brain, Rocket, Coffee, FileText, Mic, Video, FileSearch, BookOpen, Shield, Scale, Layers, Wand2, FileUp, MessageSquare, Settings2, Megaphone, Image } from 'lucide-react';
 
 export default function AboutPage() {
   return (
@@ -66,6 +66,50 @@ export default function AboutPage() {
             </div>
           </div>
 
+          {/* More Features */}
+          <div>
+            <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+              <Layers className="w-4 h-4" /> 更多功能
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="bg-muted/50 rounded-xl p-4 border border-border hover:border-primary/50 transition-colors">
+                <div className="flex items-center gap-3 mb-2">
+                  <FileUp className="w-5 h-5 text-primary" />
+                  <h4 className="text-foreground font-medium">内容提取分析</h4>
+                </div>
+                <p className="text-muted-foreground text-xs">支持长篇小说、长文、PDF 等超长内容的一键提取与结构化分析，快速提炼核心信息与关键洞察。</p>
+              </div>
+              <div className="bg-muted/50 rounded-xl p-4 border border-border hover:border-primary/50 transition-colors">
+                <div className="flex items-center gap-3 mb-2">
+                  <MessageSquare className="w-5 h-5 text-primary" />
+                  <h4 className="text-foreground font-medium">提示词广场</h4>
+                </div>
+                <p className="text-muted-foreground text-xs">收录并优化各主流 AI 工具（ChatGPT、Midjourney、Claude 等）的精选提示词模板库，支持分类筛选与一键复制。</p>
+              </div>
+              <div className="bg-muted/50 rounded-xl p-4 border border-border hover:border-primary/50 transition-colors">
+                <div className="flex items-center gap-3 mb-2">
+                  <Image className="w-5 h-5 text-primary" />
+                  <h4 className="text-foreground font-medium">公众号配图生成</h4>
+                </div>
+                <p className="text-muted-foreground text-xs">输入主题，AI 自动生成配套封面图和文中插图，支持多种风格，一键下载。</p>
+              </div>
+              <div className="bg-muted/50 rounded-xl p-4 border border-border hover:border-primary/50 transition-colors">
+                <div className="flex items-center gap-3 mb-2">
+                  <Megaphone className="w-5 h-5 text-primary" />
+                  <h4 className="text-foreground font-medium">数字营销中心</h4>
+                </div>
+                <p className="text-muted-foreground text-xs">输入主题，AI 自动生成营销方案、视频脚本和配图文案。支持抖音、B站、小红书等多平台内容分发与一键发布。</p>
+              </div>
+              <div className="bg-muted/50 rounded-xl p-4 border border-border hover:border-primary/50 transition-colors">
+                <div className="flex items-center gap-3 mb-2">
+                  <Settings2 className="w-5 h-5 text-primary" />
+                  <h4 className="text-foreground font-medium">智能体配置</h4>
+                </div>
+                <p className="text-muted-foreground text-xs">支持灵活配置 AI 模型：文本生成模型（GPT / Claude / DeepSeek 等）与图像生成模型（DALL-E / Stable Diffusion 等）独立设置、自定义 API 端点。</p>
+              </div>
+            </div>
+          </div>
+
           {/* AI Capabilities */}
           <div>
             <h3 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
@@ -106,6 +150,37 @@ export default function AboutPage() {
         </div>
       </div>
 
+      {/* Desktop Client */}
+      <div className="bg-secondary/30 rounded-xl p-6 mb-6 border border-border">
+        <div className="flex items-center gap-3 mb-6">
+          <Wand2 className="w-6 h-6 text-primary" />
+          <h2 className="text-xl font-bold text-foreground">桌面客户端</h2>
+        </div>
+        <div className="bg-gradient-to-br from-primary/5 to-transparent rounded-2xl p-6 border border-primary/20">
+          <p className="text-foreground/90 leading-relaxed mb-4">
+            订正星提供跨平台桌面客户端（macOS / Windows），将公众号文章创作能力带到桌面端。本地存储 AppID / AppSecret，数据不过服务器，使用更安心。
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div className="bg-muted/50 rounded-lg p-3 border border-border">
+              <h4 className="text-foreground font-medium mb-1 text-sm">输入主题，AI 生成全文</h4>
+              <p className="text-muted-foreground text-xs">支持多种风格模板，自动生成标题、正文、标签，可编辑后一键发布到公众号草稿箱</p>
+            </div>
+            <div className="bg-muted/50 rounded-lg p-3 border border-border">
+              <h4 className="text-foreground font-medium mb-1 text-sm">独立配置文本与图像模型</h4>
+              <p className="text-muted-foreground text-xs">文本生成和图像生成可分别选择不同 AI 提供商和模型，自定义 API 端点</p>
+            </div>
+          </div>
+          <div className="flex gap-3">
+            <Link href="/download" className="px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg text-sm font-medium transition-colors">
+              下载客户端
+            </Link>
+            <Link href="/wechat" className="px-4 py-2 bg-secondary hover:bg-muted rounded-lg text-sm text-foreground transition-colors">
+              在线使用网页版
+            </Link>
+          </div>
+        </div>
+      </div>
+
       {/* Developer Introduction */}
       <div className="bg-secondary/30 rounded-xl p-6 mb-6 border border-border">
         <div className="flex items-center gap-3 mb-6">
@@ -131,7 +206,7 @@ export default function AboutPage() {
             <p className="leading-relaxed">
               传说中<strong className="text-foreground">精通多款 AI 工具</strong>的男人。
               他的键盘上敲出的不是代码，而是<strong className="text-primary">prompt 咒语</strong>。
-              当别人还在和 AI &quot;商量&quot;的时候，他已经在<strong className="text-primary">指挥</strong> AI 干活了。
+              当别人还在和 AI "商量"的时候，他已经在<strong className="text-primary">指挥</strong> AI 干活了。
             </p>
             <p className="leading-relaxed">
               他用 ChatGPT 写需求，用 Midjourney 做设计，
@@ -141,7 +216,7 @@ export default function AboutPage() {
             </p>
             <p className="leading-relaxed">
               江湖人称：<strong className="text-primary">
-                &quot;prompt 工程师&quot;
+                "prompt 工程师"
               </strong>
             </p>
             <p className="leading-relaxed">
